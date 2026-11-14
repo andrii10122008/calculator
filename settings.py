@@ -2,7 +2,6 @@ BTN_STYLE = "background-color: #3498db; color: white; border-radius: 5px; paddin
 TITLE_STYLE = "font-size: 16px; font-weight: bold;"
 TEXT_STYLE = "font-size: 14px; color: #34495e;"
 
-
  "Вітаємо! Калькулятор ІМТ допоможе "
 
 

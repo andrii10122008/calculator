@@ -1,6 +1,6 @@
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QPushButton
-from screen_2 import Screen2
+
 
 class Screen3(QWidget):
     def __init__(self, name, age, weight, height):

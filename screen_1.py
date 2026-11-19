@@ -3,12 +3,19 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QPushButton, QLineEdit, QHBoxLayout, QMessageBox
 from screen_2 import Screen2  
 
+
+
 class Screen1(QWidget):
     def __init__(self):
         super().__init__()
         self.initUi()
         self.set_win()
         self.set_signals()
+        self.load_styles()
+        
+    def load_styles(self):
+        with open("style.css", "r", encoding="utf-8") as file:
+            self.setStyleSheet(file.read())
 
     def set_win(self):
         self.resize(700, 600)

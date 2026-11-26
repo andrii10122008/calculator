@@ -40,3 +40,13 @@ QPushButton:hover {
 QPushButton:pressed {
     background-color: #1e40af;
 }
+
+QGroupBox {
+    background-color: #ffffff;
+    border: 1px solid #d8dfea;
+    border-radius: 14px;
+    margin-top: 32px;  
+    padding: 12px;
+    font-size: 18px;
+    font-weight: 700;
+}

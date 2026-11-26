@@ -8,15 +8,15 @@ class Screen2(QWidget):
         # Принимаем имя и возраст, которые пришли из первого окна
         self.name = name
         self.age = age
-        
+        # Настраиваем окно,  интерфейс и сигналы
         self.initUI()
         self.set_win()
         self.set_signals()
-        
+        #Загрузка и примение стилей из файла style.css к окну приложения
     def set_win(self):
         self.resize(700, 600)
         self.setWindowTitle("Калькулятор ІМТ - Крок 2")
-        
+        #Создание елементов интерфейса и их размещение в окне
     def initUI(self):
         self.label_weight = QLabel("Введіть вашу вагу (кг):")
         self.in_weight = QLineEdit()

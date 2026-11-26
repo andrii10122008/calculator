@@ -7,20 +7,21 @@ from screen_2 import Screen2
 
 class Screen1(QWidget):
     def __init__(self):
+        # Вызываем коструктор родительского класса QWidget
         super().__init__()
         self.initUi()
         self.set_win()
         self.set_signals()
         self.load_styles()
-        
+        #Загрузка и примение стилей из файла style.css к окну приложения
     def load_styles(self):
         with open("style.css", "r", encoding="utf-8") as file:
             self.setStyleSheet(file.read())
-
+        #Задаем размеры окна и заголовок
     def set_win(self):
         self.resize(700, 600)
         self.setWindowTitle("Калькулятор ІМТ - Крок 1")
-
+        #Создание виджетов и их размещение в окне
     def initUi(self):
         self.btn_next = QPushButton("Далі")
 
@@ -31,6 +32,7 @@ class Screen1(QWidget):
         self.label_age = QLabel("Введіть ваш вік:")
         self.in_age = QLineEdit()
 
+        # вертикальный слой ставит елементы сверху вниз
         self.layout = QVBoxLayout()
         self.layout.addWidget(self.label_name)
         self.layout.addWidget(self.in_name)
@@ -41,13 +43,15 @@ class Screen1(QWidget):
         self.setLayout(self.layout)
 
     def set_signals(self):
+        # подключаем кнопку к методу перехода
         self.btn_next.clicked.connect(self.next_screen)
-
+        # метод для перехода на следующее окно (Screen2)
     def next_screen(self):
         self.name = self.in_name.text()
         self.age = self.in_age.text()
 
         if self.name and self.age.isdigit():
+            # Передаем имя и возраст в следующее окно
             self.sw = Screen2(self.name, int(self.age))
             self.sw.show()
             self.close()
